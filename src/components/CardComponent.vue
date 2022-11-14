@@ -25,6 +25,7 @@
         background-color: $bg-color;
         padding: 1rem;
         margin-top: 1rem;
+        height: 500px;
         
 
         img{
