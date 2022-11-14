@@ -39,5 +39,6 @@ import CardComponent from './CardComponent.vue';
     }
     .row{
         background-color: $bg-container-color;
+        margin: 0 5px;
     }
 </style>
