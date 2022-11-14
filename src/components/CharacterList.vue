@@ -1,7 +1,7 @@
 <template>
     <div class="ch-list-container">
         <div class="loading" v-if="loading">Loading data</div>
-        <div class="found">Found...</div>
+        <div class="found">Found...{{}}</div>
 
         <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-6" v-if="!loading">
             <div class="col" v-for="(item,index) in characters" :key="item.id">
@@ -18,7 +18,7 @@ import CardComponent from './CardComponent.vue';
 
     export default {
     name: "CharacterList",
-    props: ["characters"],
+    props: ["characters", "loading"],
     components: { CardComponent }
 }
 </script>

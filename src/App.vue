@@ -8,7 +8,7 @@
 
 <script>
 import axios from 'axios';
-import { resolveDirective } from 'vue';
+// import { resolveDirective } from 'vue';
 import AppHeader from './components/AppHeader.vue';
 import AppSelect from './components/AppSelect.vue';
 import CharacterList from './components/CharacterList.vue';
