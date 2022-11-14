@@ -12,5 +12,8 @@
 </script>
 
 <style lang="scss" scoped>
-  
+  select{
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
 </style>
