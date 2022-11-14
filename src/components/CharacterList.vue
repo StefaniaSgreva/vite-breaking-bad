@@ -3,19 +3,23 @@
         <div class="found">Found...</div>
 
         <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-6">
-        <div class="col">
-            ciao
+            <div class="col" v-for="(item,index) in characters" :key="item.id">
+                <CardComponent :character="item"/>
+            </div>
         </div>
-    </div>
 
     </div>
     
 </template>
 
 <script>
+import CardComponent from './CardComponent.vue';
+
     export default {
-        name: 'CharacterList'
-    }
+    name: "CharacterList",
+    props: ["characters"],
+    components: { CardComponent }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -35,6 +39,5 @@
     }
     .row{
         background-color: $bg-container-color;
-      
     }
 </style>
