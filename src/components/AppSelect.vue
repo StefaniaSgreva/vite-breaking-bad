@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex justify-content-start p-4">
+  <div class="container d-flex justify-content-start py-4">
     <form  class="row row-cols-lg-auto g-3 align-items-center">
       <div class="col-12">
         <label class="visually-hidden" for="selectCategory">Select category</label>
@@ -10,7 +10,7 @@
         </select>
       </div>
       <div class="col-12">
-          <button type="reset" class="btn btn-dark ms-4 mt-3" @click="resetSearch">Reset</button>
+          <button type="reset" class="btn btn-dark" @click="resetSearch">Reset</button>
       </div>
     </form>
   </div>
@@ -44,8 +44,5 @@ import {store} from '../store';
 </script>
 
 <style lang="scss" scoped>
-  select{
-    margin-left: 1rem;
-    margin-top: 1rem;
-  }
+
 </style>
