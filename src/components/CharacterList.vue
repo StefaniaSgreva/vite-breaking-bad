@@ -1,10 +1,10 @@
 <template>
     <div class="ch-list-container">
-        <div class="loading" v-if="loading">Loading data</div>
-        <div class="found">Found...{{}}</div>
+        <div class="loading" v-if="store.loading">Loading data</div>
+        <div class="found">Found {{}} characters</div>
 
-        <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-6" v-if="!loading">
-            <div class="col" v-for="(item,index) in characters" :key="item.id">
+        <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-6" v-if="!store.loading">
+            <div class="col" v-for="(item,index) in store.characterList" :key="item.id">
                 <CardComponent :character="item"/>
             </div>
         </div>
@@ -14,12 +14,18 @@
 </template>
 
 <script>
+import {store} from '../store'
 import CardComponent from './CardComponent.vue';
 
     export default {
     name: "CharacterList",
-    props: ["characters", "loading"],
-    components: { CardComponent }
+    // props: ["characters", "loading"],
+    components: { CardComponent },
+    data(){
+        return{
+            store,
+        }
+    }
 }
 </script>
 
