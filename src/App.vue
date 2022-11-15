@@ -24,7 +24,6 @@ import {store} from './store';
         return{
           store,
           endPoint: 'characters',
-          searchStatus: ''
         }
       },
       methods:{

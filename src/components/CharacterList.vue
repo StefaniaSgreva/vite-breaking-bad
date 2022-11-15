@@ -1,7 +1,7 @@
 <template>
     <div class="ch-list-container">
         <div class="loading" v-if="store.loading">Loading data</div>
-        <div class="found">Found {{}} characters</div>
+        <div class="found">Found {{store.characterList.length}} characters</div>
 
         <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-6" v-if="!store.loading">
             <div class="col" v-for="(item,index) in store.characterList" :key="item.id">

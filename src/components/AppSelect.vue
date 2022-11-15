@@ -5,7 +5,8 @@
         <label class="visually-hidden" for="selectCategory">Select category</label>
         <select class="form-select" id="selectCategory" v-model="search" @change="changed">
             <option selected value="">Select category</option>
-            <option :value="category" v-for="(category,index) in categoryOptions" :key="index">{{category}}</option>
+            <option :value="category" v-for="(category,index) in categoryOptions" :key="index">
+              {{category}}</option>
         </select>
       </div>
     </form>
@@ -27,10 +28,10 @@ import {store} from '../store';
           }
         },
         methods:{
-          changed(){
-            console.log(this.search);
-          }
-        }
+           changed(){
+                console.log(this.search);
+            }
+        },
     }
 </script>
 
