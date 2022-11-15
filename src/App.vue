@@ -3,6 +3,10 @@
   <main class="container d-flex flex-column align-items-start justify-content-center">
     <AppSelect @filterchar= "getCharacters"/>
     <CharacterList />
+    <div v-if="store.errormessage" class="text-center">
+      <h1>something went wrong!</h1>
+      <p>{{store.errormessage}}</p>
+    </div>
   </main>
 </template>
 
@@ -30,11 +34,11 @@ import {store} from './store';
         getCharacters(){
           let options = null
           if(store.search.category){
-                    options = {
-                        params:{
-                            category: store.search.category, //chiave: valore
-                        }
-                    }
+              options = {
+                  params:{
+                      category: store.search.category, //chiave: valore
+                  }
+              }
           }
 
           store.loading = true;
@@ -46,6 +50,7 @@ import {store} from './store';
                 store.loading = false;
               }
             ).catch((error)=>{
+              store.characterList.lenght = 0;
               store.loading = false;
               store.errormessage = error.message;   
             })

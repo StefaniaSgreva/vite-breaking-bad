@@ -9,6 +9,9 @@
               {{category}}</option>
         </select>
       </div>
+      <div class="col-12">
+          <button type="reset" class="btn btn-dark ms-4 mt-3" @click="resetSearch">Reset</button>
+      </div>
     </form>
   </div>
 </template>
@@ -30,6 +33,10 @@ import {store} from '../store';
         methods:{
            changed(){
                 console.log(store.search.category);
+                this.$emit('filterchar');
+            },
+            resetSearch(){
+                store.search.category= '';
                 this.$emit('filterchar');
             }
         },
