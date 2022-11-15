@@ -1,7 +1,7 @@
 <template>
   <AppHeader title="Bracking Bad Api"/>
   <main class="container d-flex flex-column align-items-start justify-content-center">
-    <AppSelect/>
+    <AppSelect />
     <CharacterList />
   </main>
 </template>
@@ -24,6 +24,7 @@ import {store} from './store';
         return{
           store,
           endPoint: 'characters',
+          searchStatus: ''
         }
       },
       methods:{
