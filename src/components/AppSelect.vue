@@ -3,7 +3,7 @@
     <form  class="row row-cols-lg-auto g-3 align-items-center">
       <div class="col-12">
         <label class="visually-hidden" for="selectCategory">Select category</label>
-        <select class="form-select" id="selectCategory" v-model="search" @change="changed">
+        <select class="form-select" id="selectCategory" v-model="store.search.category" @change="changed">
             <option selected value="">Select category</option>
             <option :value="category" v-for="(category,index) in categoryOptions" :key="index">
               {{category}}</option>
@@ -15,7 +15,8 @@
 
 <script>
 import {store} from '../store';
-    export default {
+    
+  export default {
         name: 'AppSelect',
         data(){
           return{
@@ -24,15 +25,15 @@ import {store} from '../store';
               'Breaking Bad',
               'Better Call Saul'
             ],
-            search: ''
+            // search: '',
           }
         },
         methods:{
            changed(){
-                console.log(this.search);
+                console.log(store.search.category);
             }
         },
-    }
+  }
 </script>
 
 <style lang="scss" scoped>
