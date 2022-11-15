@@ -7,4 +7,5 @@ export const store = reactive({
         category: '',  
     },
     loading: false,
+    errormessage: ''
 });

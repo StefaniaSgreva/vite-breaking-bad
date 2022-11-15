@@ -4,7 +4,7 @@
     <AppSelect @filterchar= "getCharacters"/>
     <CharacterList />
     <div v-if="store.errormessage" class="text-center">
-      <h1>something went wrong!</h1>
+      <h1>Something went wrong!</h1>
       <p>{{store.errormessage}}</p>
     </div>
   </main>
@@ -32,6 +32,8 @@ import {store} from './store';
       },
       methods:{
         getCharacters(){
+          store.errormessage = '';
+
           let options = null
           if(store.search.category){
               options = {
@@ -50,9 +52,9 @@ import {store} from './store';
                 store.loading = false;
               }
             ).catch((error)=>{
-              store.characterList.lenght = 0;
-              store.loading = false;
-              store.errormessage = error.message;   
+                store.characterList.lenght = 0;
+                store.loading = false;
+                store.errormessage = error.message;   
             })
         }
       },
