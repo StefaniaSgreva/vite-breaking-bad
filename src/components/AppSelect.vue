@@ -24,13 +24,13 @@ import {store} from '../store';
             categoryOptions:[
               'Breaking Bad',
               'Better Call Saul'
-            ],
-            // search: '',
+            ]
           }
         },
         methods:{
            changed(){
                 console.log(store.search.category);
+                this.$emit('filterchar');
             }
         },
   }

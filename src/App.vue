@@ -1,7 +1,7 @@
 <template>
   <AppHeader title="Bracking Bad Api"/>
   <main class="container d-flex flex-column align-items-start justify-content-center">
-    <AppSelect />
+    <AppSelect @filterchar= "getCharacters"/>
     <CharacterList />
   </main>
 </template>
@@ -28,9 +28,18 @@ import {store} from './store';
       },
       methods:{
         getCharacters(){
+          let options = null
+          if(store.search.category){
+                    options = {
+                        params:{
+                            category: store.search.category, //chiave: valore
+                        }
+                    }
+          }
+
           store.loading = true;
           const apiurl = store.apiURL + this.endPoint;
-          axios.get(apiurl).then(
+          axios.get(apiurl, options).then(
               (res)=>{
                 // console.log(res.data);
                 store.characterList = res.data;
